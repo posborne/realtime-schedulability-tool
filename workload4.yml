@@ -1,0 +1,29 @@
+# This is identical to workload 1, except task 1 has a deadline of
+# 9ms, and tasks 2 and 3 access a shared data structure and contain
+# mutually exclusive critical sections that may execute for 2ms.  (The
+# 2 ms is included in the execution times, i.e. task 2 has a maximum
+# execuration time of 13 ms, but it may be in a mutually exclusive
+# section for up to 2msat a time during that 13ms.)  Assume mutual
+# exclusion is achieved by masking interrupts, i.e. non-preemption is
+# used to insure mutual exclusion.
+name: Workload 4
+tasks:
+  t1:
+    period: 25
+    execution_time: 8
+    deadline: 9
+  t2:
+    period: 50
+    execution_time: 13
+  t3:
+    period: 100
+    execution_time: 40
+
+mutexes:
+  mutex1:
+    method: no_interrupt
+    tasks:
+      t2:
+        cs_duration: 2
+      t3:
+        cs_duration: 2

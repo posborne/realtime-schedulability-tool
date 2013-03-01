@@ -1,0 +1,14 @@
+# Task 1 has period and deadline of 25ms, execution time 8ms.
+# Task 2 has period and deadline 40ms, execution time 13ms.
+# Task 3 has period and deadline 100ms, execution time 40ms.
+name: Workload 1
+tasks:
+  t1:
+    period: 25
+    execution_time: 8
+  t2:
+    period: 50
+    execution_time: 13
+  t3:
+    period: 100
+    execution_time: 40

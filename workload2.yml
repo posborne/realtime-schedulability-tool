@@ -1,0 +1,15 @@
+# This is identical to workload 1, except task 1 has a deadline of 9ms
+# and task 3 has a deadline of 75ms.
+name: Workload 2
+tasks:
+  t1:
+    period: 25
+    execution_time: 8
+    deadline: 9
+  t2:
+    period: 50
+    execution_time: 13
+  t3:
+    period: 100
+    execution_time: 40
+    deadline: 75

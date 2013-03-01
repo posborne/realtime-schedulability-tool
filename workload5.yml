@@ -1,0 +1,24 @@
+# This is identicial to workload 4, except a priority inheritance
+# real-time semaphore is used to assure mutual exclusion between tasks
+# 2 and 3.
+name: Workload 5
+tasks:
+  t1:
+    period: 25
+    execution_time: 8
+    deadline: 9
+  t2:
+    period: 50
+    execution_time: 13
+  t3:
+    period: 100
+    execution_time: 40
+
+mutexes:
+  mutex1:
+    method: priority_inheritance
+    tasks:
+      t2:
+        cs_duration: 2
+      t3:
+        cs_duration: 2

@@ -1,0 +1,26 @@
+# Task 1 has period and deadline 20ms, execution time 5ms.
+# Task 2 has period and deadline 30ms, execution time 12ms.
+# Task 3 has period and deadline 50ms, execution time 15ms.
+#
+# There is a dispatcher task taht has a period of 10ms and an
+# execution time of 1ms.
+name: Workload 3
+dispatcher:
+  period: 10
+  execution_time: 1
+tasks:
+  t1:
+    period: 20
+    execution_time: 5
+  t2:
+    period: 30
+    execution_time: 12
+  t3:
+    period: 50
+    execution_time: 15
+
+  # Model dispatcher as another task with highest priority
+  # based on its period (deadline monotonic)
+  dispatcher:
+    period: 10
+    execution_time: 1
